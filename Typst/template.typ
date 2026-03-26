@@ -1,0 +1,128 @@
+// ==========================================
+// EINSTELLUNGEN & TEMPLATE-DEFINITION
+// ==========================================
+
+#let project(
+  title: "",
+  subtitle: "",
+  author: "",
+  supervisor: "",
+  faculty: "",
+  date: none,
+  body,
+) = {
+  // --- Seiteneinrichtung & Metadaten ---
+  set document(author: author, title: title)
+  
+  // A4 mit spezifischen Rändern
+  set page(
+    paper: "a4",
+    margin: (x: 30mm, top: 25mm, bottom: 25mm),
+    numbering: "1",
+    header: none,
+    footer: none,
+  )
+  
+  // Sprache und Textformatierung
+  set text(font: "Linux Libertine", lang: "de", size: 11pt)
+  
+  // Absatzformatierung
+  set par(justify: true, leading: .8em, first-line-indent: 0em)
+
+  // Überschriften-Nummerierung
+  set heading(numbering: "1.1")
+  
+  // Mathe-Nummerierung
+  set math.equation(numbering: "(1)")
+
+  // Bildunterschriften formatieren
+  show figure.caption: it => [
+    #text(size: 9pt)[*#it.supplement #it.counter.display():* #it.body]
+  ]
+
+  // ==========================================
+  // TITELSEITE
+  // ==========================================
+  
+  align(center)[
+    #v(2cm)
+    // Logo-Platzhalter (Pfad anpassen, hier auskommentiert)
+    // #image("Images/logo.png", width: 40%)
+    #v(0.5cm)
+    
+    #text(18pt, smallcaps(faculty)) \
+    #v(1.0cm)
+    #text(14pt, smallcaps(subtitle)) \
+    #v(0.5cm)
+    
+    #line(length: 100%, stroke: 1.5pt)
+    #[
+      #set par(leading: 0.4em)
+      #text(22pt, weight: "bold", title)
+    ]
+    #line(length: 100%, stroke: 1.5pt)
+    #v(1.5cm)
+    
+    #align(center)[
+      #grid(
+        columns: (auto, auto),
+        gutter: 1em,
+        align: (right, left),
+        emph("Autor:"), author,
+        emph("Betreuer:"), supervisor
+      )
+    ]
+    
+    #v(1fr)
+    #text(12pt)[
+      #if date == none [
+        #datetime.today().display("[day].[month].[year]")
+      ] else [
+        #date
+      ]
+    ]
+  ]
+  
+  pagebreak()
+
+  // ==========================================
+  // FRONT MATTER (Inhaltsverzeichnis, etc.)
+  // ==========================================
+
+  set page(
+    paper: "a4",
+    margin: (x: 30mm, top: 25mm, bottom: 25mm),
+    numbering: "1",
+    header: [
+      #set text(8pt)
+      // Kopfzeile mit Kapitelnamen (optional)
+      #align(right)[
+        // #smallcaps(title)
+      ]
+      #line(length: 100%, stroke: 0.5pt)
+    ],
+  )
+  
+  // Inhaltsverzeichnis
+  outline(title: "Inhaltsverzeichnis", indent: auto)
+  pagebreak()
+  
+  // Abbildungsverzeichnis
+  outline(
+    title: "Abbildungsverzeichnis", 
+    target: figure.where(kind: image)
+  )
+  pagebreak()
+
+  // Tabellenverzeichnis
+  outline(
+    title: "Tabellenverzeichnis", 
+    target: figure.where(kind: table)
+  )
+  pagebreak()
+
+  // ==========================================
+  // HAUPTTEIL
+  // ==========================================
+  body
+}
