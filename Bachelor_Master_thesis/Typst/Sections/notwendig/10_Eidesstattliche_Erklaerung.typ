@@ -13,7 +13,7 @@ Leipzig, #datum
 #v(1.5cm)
 #table(
   columns: (6cm, 0.5cm, 1fr),
-  inset: 0pt,
-  [#line(length: 6cm)], [], [],
+  stroke: none,
+  [#line(length: 6cm, stroke: (dash: "dotted"))], [], [],
   [#vorname #name], [], [],
 )
