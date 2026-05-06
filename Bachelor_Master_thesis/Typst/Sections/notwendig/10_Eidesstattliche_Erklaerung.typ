@@ -12,8 +12,10 @@ Leipzig, #datum
 
 #v(1.5cm)
 #table(
-  columns: (6cm, 0.5cm, 1fr),
-  inset: 0pt,
+  columns: (6cm, 2.5cm, 1fr),
+  inset: 1pt,
+  gutter: 0.3cm,
+  stroke:none,
   [#line(length: 6cm)], [], [],
   [#vorname #name], [], [],
 )
