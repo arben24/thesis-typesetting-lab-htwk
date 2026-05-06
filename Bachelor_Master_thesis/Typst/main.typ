@@ -21,16 +21,16 @@
   
 	#counter(page).update(1)
 
-	#include "Sections/00_Sperrvermerk.typ"
+	#include "Sections/notwendig/00_Sperrvermerk.typ"
 	#pagebreak()
 
-	#include "Sections/01_Aufgabenstellung.typ"
+	#include "Sections/notwendig/01_Aufgabenstellung.typ"
 	#pagebreak()
 
-	#include "Sections/02_Abstract.typ"
+	#include "Sections/notwendig/02_Abstract.typ"
 	#pagebreak()
 
-	#include "Sections/03_Abkuerzungsverzeichnis.typ"
+	#include "Sections/notwendig/03_Abkuerzungsverzeichnis.typ"
 	#pagebreak()
 
 	#outline(title: [Inhaltsverzeichnis], indent: auto)
@@ -42,26 +42,27 @@
 	#outline(title: [Tabellenverzeichnis], target: figure.where(kind: table))
 	#pagebreak()
 
-	#include "Sections/04_Symbolverzeichnis.typ"
+	#include "Sections/notwendig/04_Symbolverzeichnis.typ"
 	#pagebreak()
 
 	#set page(numbering: "1")
 	#counter(page).update(1)
 
-	#include "Sections/05_Einleitung.typ"
+	#include "Sections/01_Einleitung.typ"
 	#pagebreak()
 
-	#include "Sections/06_Beispiel_Text.typ"
+	#include "Sections/02_Typst_grundlagen.typ"
 	#pagebreak()
 
-	#include "Sections/07_Ausblick.typ"
+	#include "Sections/06_Ausblick.typ"
 	#pagebreak()
 
-	#include "Sections/08_Anhang.typ"
+	#include "Sections/notwendig/08_Anhang.typ"
 	#pagebreak()
 
-	#include "Sections/09_Literaturverzeichnis.typ"
+	= Literaturverzeichnis <sec:literatur>
+	#bibliography("references.bib", style: "ieee",title: none)
 	#pagebreak()
 
-	#include "Sections/10_Eidesstattliche_Erklaerung.typ"
+	#include "Sections/notwendig/10_Eidesstattliche_Erklaerung.typ"
 ]

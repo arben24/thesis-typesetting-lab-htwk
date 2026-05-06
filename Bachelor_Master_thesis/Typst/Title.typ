@@ -9,7 +9,7 @@
   // linke Spalte: Fakultätsbezeichnung
   [#image("Abbildungen/HTWK-Fakultaetszusatz_ing_schwarz_de.png", width: 70mm)],
   // rechte Spalte: HTWK-Block (Platzhalter)
-  [#image("Abbildungen/HTWK_Zusatz_de_V_Black_K-eps-converted-to.pdf", width: 50mm)]
+  [#image("Abbildungen/HTWK_Zusatz_de_V_Black_K.jpg", width: 50mm)]
 )
 
 #v(2cm)

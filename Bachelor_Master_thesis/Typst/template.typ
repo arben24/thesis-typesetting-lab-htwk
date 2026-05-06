@@ -1,4 +1,5 @@
 #import "Daten.typ": *
+#import "Sections/notwendig/globals.typ": * 
 
 #let project(body) = {
   set document(author: vorname + " " + name, title: thema)
@@ -37,6 +38,12 @@
       #align(center)[#counter(page).display()]
     ],
   )
+
+  show outline: it => {
+  in-outline.update(true)
+  it
+  in-outline.update(false)
+  }
 
   counter(page).update(1)
 

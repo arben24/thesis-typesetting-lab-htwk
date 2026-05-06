@@ -1,4 +1,4 @@
-#import "../Daten.typ": *
+#import "../../Daten.typ": *
 
 #text(size: 18pt, weight: "bold")[Eidesstattliche Erklärung]
 

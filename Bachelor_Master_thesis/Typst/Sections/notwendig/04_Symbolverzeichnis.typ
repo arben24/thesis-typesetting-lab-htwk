@@ -1,4 +1,4 @@
-= Symbolverzeichnis <sec:symbole>
+#text(size: 18pt, weight: "bold")[Symbolverzeichnis] <sec:symbole>
 
 #table(
   columns: (3cm, 1fr),

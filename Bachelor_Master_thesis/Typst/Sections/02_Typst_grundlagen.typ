@@ -1,3 +1,4 @@
+#import "notwendig/globals.typ": *
 = Kapitel: Formatierung <sec:formatierung>
 
 Diese Vorlage ist wie folgt formatiert:
@@ -29,6 +30,20 @@ Das Logo der HTWK kann in dieser Vorlage durch eine Platzhaltergrafik dargestell
 ) <fig:htwk_logo>
 
 Die Platzhaltergrafik ist mit dem Label @fig:htwk_logo referenzierbar.
+
+In dieser Vorlage hier wurde eine weitere Funktion hinzugefügt, um die Bildunterschriften besser anpassen zu können. Hier wurde eine neue Funktion eingefügt, welche dafür sorgt, dass einmal der Text angegeben werden kann, der unter dem Bild angezeigt werden soll und einmal der Text angegeben werden kann, der im Abbildungsverzeichnis auftauchen soll. Um diese Funktion nutzen zu können, muss ganz oben in der Datei folgendes noch eingefügt werden:
+
+```c
+#import "notwendig/globals.typ": *
+```
+
+#figure(
+  rect(width: 70%, height: 4.5cm, fill: rgb("eef")),
+  caption: flex-caption(
+    [Hier sieht man den Text, der angezeigt wird, und ein Bild.  (Quelle: Eigene Aufnahme)],
+    [Und hier sieht man jetzt den Text, der im Abbildungsverzeichnis erscheint. ]
+  ),
+) <fig:htwk_logo_new>
 
 == Unterkapitel: Verweise und Referenzierung
 
@@ -70,3 +85,18 @@ Die Tabellen-Umgebung eignet sich zur strukturierten Darstellung von Daten.
 == Unterkapitel: Links
 
 Für Verlinkungen zu Webseiten kann die Linkfunktion eingesetzt werden: #link("https://www.zahlen-kern.de/editor")[Formeleditor].
+
+
+== Code einfügen 
+
+Um Code im Text einzufügen, kann man das wie folgt umsetzen: 
+
+```python
+a + b = c
+print("Hallo Welt")
+```
+oder auch andere Sprachen:
+```c
+a + b = c
+printf("Hallo Welt")
+```
