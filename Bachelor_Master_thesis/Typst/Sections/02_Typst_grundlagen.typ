@@ -19,7 +19,7 @@ Vorab vier wichtige Befehle für das Hervorheben von Informationen.
 
 - Fettgedruckt: *text*
 - Kursivschrift: _text_
-- Unterstreichen: _text_
+- Unterstreichen: #underline[text]
 - Färben: #text(fill: red)[text]
 
 Das Logo der HTWK kann in dieser Vorlage durch eine Platzhaltergrafik dargestellt werden. Bilddateien wie PNG, JPG, PDF oder SVG lassen sich in Typst direkt als Figure einbinden.
